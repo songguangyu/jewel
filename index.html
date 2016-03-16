@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<script type="text/javascript" src="./Jewel.js"></script>
+	<script type="text/javascript" src="./promise.js"></script>
+</head>
+<body>
+	<div moudle="init">
+		<div>{{bbb}}</div>
+		<ul>
+			<li ms-repeat={{aaaa}} ms-class={{bbb}}>{{aaaa}}</li>
+		</ul>
+		<div>{{ccc}}</div>
+	</div>
+
+	<div moudle="init2">
+		<div>{{bbb}}</div>
+		<ul>
+			<li ms-repeat={{aaaa}} ms-class={{bbb}}>{{aaaa}}</li>
+		</ul>
+		<div>{{ccc}}</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			var moudle = $.moudle({
+				'id': 'init',
+				'aaaa' : ['你','真','帅'],
+				'bbb': "你好，宋光宇！",
+				'ccc': "欢迎完毕"
+			})
+
+			var moudle2 = $.moudle({
+				'id': 'init2',
+				'aaaa' : ['你','真','帅'],
+				'bbb': "你好，宋光宇！",
+				'ccc': "欢迎完毕"
+			})
+
+			setTimeout(function() {
+				moudle.aaaa = ['帅','掉','渣'];
+				moudle2.bbb = "帅的不要不要的了"
+			} ,1000)
+		});
+	</script>
+</body>
+</html>
